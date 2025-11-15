@@ -269,19 +269,27 @@ body {
 }
 
 /* Contato */
-.contact-list {
-  list-style: none;
+.contact-list a {
+  color: #1d4ed8;        /* azul bonito igual ao OpenAI Academy */
+  text-decoration: none; /* remove o sublinhado */
+  font-weight: 500;
+}
+
+.contact-list a:hover {
+  text-decoration: underline; /* sublinha só no hover, mais elegante */
+  color: #1e40af;
+}
+
+.contact-list li {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: 14px;
+  align-items: center;
+  gap: 8px;
 }
 
 .contact-list i {
-  width: 18px;
-  margin-right: 4px;
+  font-size: 18px;
+  color: #1f2937; /* deixa os ícones mais elegantes */
 }
-
 /* Responsivo */
 @media (max-width: 900px) {
   .layout {
@@ -314,3 +322,4 @@ body {
     height: 180px;
   }
 }
+
