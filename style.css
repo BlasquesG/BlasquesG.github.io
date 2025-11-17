@@ -150,50 +150,62 @@ body {
 /* Project cards */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
 }
 
 .card {
   background: #ffffff;
   border-radius: 14px;
-  padding: 16px 18px 18px;
+  padding: 18px 20px 22px;
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  text-decoration: none;    /* clickable card without underline */
-  color: inherit;           /* inherit text color */
+  gap: 12px;
+
+  /* Make clickable but NOT look like a link */
+  text-decoration: none !important;
+  color: inherit !important;
   cursor: pointer;
-  transition: transform 0.12s ease, box-shadow 0.12s ease;
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
 }
 
+/* Titles inside cards */
 .card h3 {
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
 }
 
+/* Body text */
 .card-text {
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.45;
   color: #4b5563;
 }
 
+/* Icons + metadata */
 .card-meta {
   list-style: none;
-  font-size: 12px;
+  font-size: 13px;
   color: #6b7280;
   display: flex;
   flex-direction: column;
   gap: 4px;
+  margin-top: 6px;
 }
 
-.card-meta i {
-  margin-right: 4px;
+.card-meta li i {
+  margin-right: 6px;
 }
+
 
 /* Publications */
 .pub-list {
@@ -298,6 +310,7 @@ body {
     height: 180px;
   }
 }
+
 
 
 
