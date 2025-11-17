@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Gabriel Blasques – R & Plant Breeding</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="style.css" />
-  <!-- Ícones (opcional) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 </head>
 <body>
@@ -27,171 +26,141 @@
         </a>
         <a href="#projects" class="nav-item">
           <i class="fa-solid fa-diagram-project"></i>
-          <span>Projetos</span>
+          <span>Projects</span>
         </a>
         <a href="#publications" class="nav-item">
           <i class="fa-solid fa-book-open"></i>
-          <span>Publicações</span>
+          <span>Publications</span>
         </a>
         <a href="#about" class="nav-item">
           <i class="fa-solid fa-user"></i>
-          <span>Sobre</span>
+          <span>About</span>
         </a>
         <a href="#contact" class="nav-item">
           <i class="fa-solid fa-envelope"></i>
-          <span>Contato</span>
+          <span>Contact</span>
         </a>
       </nav>
     </aside>
 
-    <!-- Conteúdo principal -->
+    <!-- Main content -->
     <main class="main">
 
-      <!-- Banner -->
+      <!-- Hero -->
       <section id="home" class="hero">
         <div class="hero-text">
           <p class="hero-subtitle">Welcome back, Gabriel</p>
-          <h1>Vamos desbloquear o poder da IA<br>no melhoramento de plantas.</h1>
+          <h1>Let’s unlock the power of AI<br>for plant breeding.</h1>
           <p class="hero-description">
-            Portfólio de projetos em R com foco em G×E, enviromics e predição
-            em ambientes não testados.
+            Portfolio of R projects focused on G×E analysis, enviromics, and prediction in untested environments.
           </p>
         </div>
         <div class="hero-art"></div>
       </section>
 
-      <!-- Projetos -->
+      <!-- Projects -->
       <section id="projects" class="section">
         <div class="section-header">
-          <h2>Projetos em R</h2>
-          <span class="section-tag">Portfólio</span>
+          <h2>R projects</h2>
+          <span class="section-tag">Portfolio</span>
         </div>
 
         <div class="cards">
 
-          <!-- Card 1 -->
-          <article class="card">
-            <div class="card-badge-row">
-              <span class="badge badge-live">Novo</span>
-              <span class="badge badge-type">Pacote R</span>
-            </div>
-            <h3>GIS-FA para predição em ambientes não testados</h3>
+          <!-- Project 1 -->
+          <a class="card" href="https://github.com/BlasquesG/gis-fa-prediction" target="_blank">
+            <h3>GIS–FA for prediction in untested environments</h3>
             <p class="card-text">
-              Pipeline em R integrando modelos fatoriais, dados ambientais
-              (clima, solo, MODIS) e mapas temáticos para recomendar híbridos
-              de milho em regiões não avaliadas experimentalmente.
+              End-to-end R pipeline integrating factor–analytic mixed models, environmental data
+              (climate, soil, MODIS) and thematic maps to recommend maize hybrids in regions
+              without experimental trials.
             </p>
             <ul class="card-meta">
               <li><i class="fa-solid fa-code"></i> R · asreml · terra · PLS</li>
-              <li><i class="fa-solid fa-location-dot"></i> Brasil – Cerrado</li>
+              <li><i class="fa-solid fa-location-dot"></i> Brazil – Cerrado</li>
             </ul>
-            <div class="card-footer">
-              <a class="btn" href="https://github.com/SEU-USUARIO/SEU-REPO-GIS-FA" target="_blank">
-                Ver no GitHub
-              </a>
-            </div>
-          </article>
+          </a>
 
-          <!-- Card 2 -->
-          <article class="card">
-            <div class="card-badge-row">
-              <span class="badge badge-upcoming">Em desenvolvimento</span>
-              <span class="badge badge-type">Shiny App</span>
-            </div>
-            <h3>Dashboard de G×E com modelos fatoriais</h3>
+          <!-- Project 2 -->
+          <a class="card" href="https://github.com/BlasquesG/gxe-fa-dashboard" target="_blank">
+            <h3>G×E dashboard with factor-analytic models</h3>
             <p class="card-text">
-              Aplicativo Shiny para visualizar cargas fatoriais, escores,
-              mapas de recomendação e estabilidade de híbridos usando modelos FA.
+              Shiny application for exploring factor loadings, scores, recommendation maps,
+              and hybrid stability under FA models in multi-environment trials.
             </p>
             <ul class="card-meta">
               <li><i class="fa-solid fa-code"></i> R · shiny · qgraph</li>
-              <li><i class="fa-solid fa-chart-line"></i> Visualização interativa</li>
+              <li><i class="fa-solid fa-chart-line"></i> Interactive visualisation</li>
             </ul>
-            <div class="card-footer">
-              <a class="btn ghost" href="#" target="_blank">
-                Repositório em breve
-              </a>
-            </div>
-          </article>
+          </a>
 
-          <!-- Card 3 -->
-          <article class="card">
-            <div class="card-badge-row">
-              <span class="badge badge-recorded">Publicado</span>
-              <span class="badge badge-type">Workflow</span>
-            </div>
-            <h3>Predição genômica integrada a enviromics</h3>
+          <!-- Project 3 -->
+          <a class="card" href="https://github.com/BlasquesG/genomic-enviromics" target="_blank">
+            <h3>Genomic prediction integrated with enviromics</h3>
             <p class="card-text">
-              Scripts e tutoriais para ajuste de modelos de norma de reação
-              e integração de marcadores com covariáveis ambientais em painéis
-              multiambiente.
+              Scripts and tutorials for reaction-norm models combining SNP markers and
+              environmental covariates to predict complex traits across environments.
             </p>
             <ul class="card-meta">
-              <li><i class="fa-solid fa-dna"></i> Genômica · GBLUP · Reaction Norm</li>
-              <li><i class="fa-solid fa-file-lines"></i> Vignettes em Quarto</li>
+              <li><i class="fa-solid fa-dna"></i> Genomics · GBLUP · Reaction norm</li>
+              <li><i class="fa-solid fa-file-lines"></i> Quarto vignettes</li>
             </ul>
-            <div class="card-footer">
-              <a class="btn" href="https://github.com/SEU-USUARIO/SEU-REPO-GENOMIC" target="_blank">
-                Ver no GitHub
-              </a>
-            </div>
-          </article>
+          </a>
 
         </div>
       </section>
 
-      <!-- Publicações -->
+      <!-- Publications -->
       <section id="publications" class="section">
         <div class="section-header">
-          <h2>Publicações selecionadas</h2>
+          <h2>Selected publications</h2>
         </div>
         <ul class="pub-list">
           <li>
-            <strong>Autor et al. (2024).</strong>
-            Predição de híbridos de milho em ambientes não testados usando GIS-FA e dados genômicos.
-            <span class="pub-extra">Revista / Preprint – link aqui.</span>
+            <strong>Author et al. (2024).</strong>
+            Predicting maize hybrids in untested environments using GIS-FA and genomic data.
+            <span class="pub-extra">Journal / preprint – link here.</span>
           </li>
-          <!-- Adicione outras publicações -->
         </ul>
       </section>
 
-<!-- Sobre -->
-<section id="about" class="section">
-  <div class="section-header">
-    <h2>About me</h2>
-  </div>
+      <!-- About -->
+      <section id="about" class="section">
+        <div class="section-header">
+          <h2>About me</h2>
+        </div>
 
-  <ul>
-    <li>Biotechnological Engineer | PhD Candidate in Genetics and Plant Breeding at UFV</li>
-    <li>Background in plant tissue culture, with expertise in protoplast technology, mutagenesis, suspension cell culture, and elicitation strategies</li>
-    <li>Research focused on Genotype-by-Environment Interaction (GxE), genomics and Enviromics, integrating environmental covariates to enhance breeding strategies</li>
-    <li>Skilled in quantitative genetics, statistical modeling, and experimental design to data-driven breeding decisions</li>
-    <li>Experience in data analysis, predictive modeling, and computational tools (R)</li>
-    <li>Committed to bridging genetics, statistics, and biometrics to develop high-performing crops, while harnessing big data and machine learning approaches to accelerate genetic gains in plant breeding</li>
-  </ul>
-
-</section>
-
-
-      <!-- Contato -->
-      <section id="contact" class="section">
-<ul class="contact-list">
-  <li>
-    <i class="fa-brands fa-github"></i>
-    <a href="https://github.com/BlasquesG" target="_blank">github.com/BlasquesG</a>
-  </li>
-
-  <li>
-    <i class="fa-brands fa-linkedin"></i>
-    <a href="https://www.linkedin.com/in/gabriel-blasques" target="_blank">linkedin.com/in/gabriel-blasques</a>
-  </li>
-
-  <li>
-    <i class="fa-solid fa-envelope"></i>
-    gabriel.blasques@ufv.br
-  </li>
-</ul>
+        <ul class="about-list">
+          <li>Biotechnological Engineer | PhD Candidate in Genetics and Plant Breeding at UFV.</li>
+          <li>Background in plant tissue culture, with expertise in protoplast technology, mutagenesis, suspension cell culture, and elicitation strategies.</li>
+          <li>Research focused on Genotype-by-Environment Interaction (G×E), genomics and enviromics, integrating environmental covariates to enhance breeding strategies.</li>
+          <li>Skilled in quantitative genetics, statistical modelling, and experimental design to support data-driven breeding decisions.</li>
+          <li>Experience in data analysis, predictive modelling, and computational tools (R).</li>
+          <li>Committed to bridging genetics, statistics and biometrics to develop high-performing crops, leveraging big data and machine-learning approaches to accelerate genetic gain in plant breeding.</li>
+        </ul>
       </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <div class="section-header">
+          <h2>Contact</h2>
+        </div>
+        <ul class="contact-list">
+          <li>
+            <i class="fa-brands fa-github"></i>
+            <a href="https://github.com/BlasquesG" target="_blank">github.com/BlasquesG</a>
+          </li>
+          <li>
+            <i class="fa-brands fa-linkedin"></i>
+            <a href="https://www.linkedin.com/in/gabriel-blasques" target="_blank">linkedin.com/in/gabriel-blasques</a>
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:gabriel.blasques@ufv.br">gabriel.blasques@ufv.br</a>
+          </li>
+        </ul>
+      </section>
+
     </main>
   </div>
 </body>
