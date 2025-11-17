@@ -35,23 +35,29 @@ body {
   font-size: 14px;
 }
 
-/* Colocar foto no mesmo estilo do ícone */
-.logo-icon.photo {
+/* Ícone / foto do logo (base) */
+.logo-icon {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* Quando for foto */
+.logo-icon.photo {
+  overflow: hidden;              
+}
+
+/* A imagem em si */
 .logo-icon.photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* deixa a foto redondinha sem distorcer */
+  object-fit: cover;             
   border-radius: 50%;
 }
+
 
 
 .logo-text {
@@ -426,6 +432,7 @@ body {
     text-align: left;
   }
 }
+
 
 
 
