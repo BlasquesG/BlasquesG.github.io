@@ -83,15 +83,14 @@ body {
   color: #ffffff;
 }
 
-/* Ícones de contato na sidebar */
+/* Ícones de contato na sidebar (DESKTOP) */
 .sidebar-contacts {
   margin-top: auto;               
   display: flex;
-  flex-direction: column;
+  flex-direction: column;         
   gap: 12px;
-  padding-bottom: 12px;           
+  padding-bottom: 16px;
 }
-
 
 .sidebar-contacts a,
 .sidebar-contacts a:visited {
@@ -107,7 +106,6 @@ body {
   text-decoration: none;
   font-size: 18px;
 }
-
 
 .sidebar-contacts a:hover {
   background: #1d4ed8;
@@ -403,7 +401,7 @@ body {
     gap: 6px;
   }
 
-  /* contatos sobem para a barra superior e ficam em linha */
+  /* Ícones no topo em linha APENAS no MOBILE */
   .sidebar-contacts {
     margin-top: 0;
     flex-direction: row;
@@ -422,6 +420,8 @@ body {
     text-align: left;
   }
 }
+
+
 
 
 
