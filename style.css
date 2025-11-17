@@ -83,35 +83,33 @@ body {
   color: #ffffff;
 }
 
-/* Ícones de contato na sidebar (DESKTOP) */
+/* Ícones de contato na sidebar (desktop) – em linha, sem bolinha */
 .sidebar-contacts {
-  margin-top: auto;               
+  margin-top: auto;             
   display: flex;
-  flex-direction: column;         
-  gap: 12px;
-  padding-bottom: 16px;
+  flex-direction: row;          
+  gap: 16px;                    /* espaço entre os ícones */
+  padding: 0 0 20px 18px;      
 }
 
 .sidebar-contacts a,
 .sidebar-contacts a:visited {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #e5e7eb;
-  background: #ffffff;
-  color: #4b5563;
   text-decoration: none;
-  font-size: 18px;
+  border: none;
+  background: transparent;      
+  color: #4b5563;               
+  font-size: 24px;              /* ícone maior */
+  cursor: pointer;
 }
 
 .sidebar-contacts a:hover {
-  background: #1d4ed8;
-  border-color: #1d4ed8;
-  color: #ffffff;
+  color: #1d4ed8;               
+  transform: translateY(-1px);  
 }
+
 
 
 /* Main */
@@ -420,6 +418,7 @@ body {
     text-align: left;
   }
 }
+
 
 
 
