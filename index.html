@@ -46,15 +46,38 @@
     <!-- Main content -->
     <main class="main">
 
-      <!-- Hero -->
+      <!-- Hero slider -->
       <section id="home" class="hero">
-        <div class="hero-text">
-          <h1>Advancing plant breeding through AI and statistics.</h1>
-          <p class="hero-description">
-            Portfolio of projects focused on G×E analysis, genomics, enviromics, and prediction in untested environments.
-          </p>
+
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+          <div class="hero-text">
+            <p class="hero-subtitle">Welcome back, Gabriel</p>
+            <h1>Gabriel’s portfolio in R and plant breeding.</h1>
+            <p class="hero-description">
+              Curated projects in quantitative genetics, G×E analysis, genomics and enviromics,
+              with a focus on prediction in untested environments.
+            </p>
+          </div>
+          <div class="hero-art"></div>
         </div>
-        <div class="hero-art"></div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <div class="hero-text">
+            <p class="hero-subtitle">Research & analytics</p>
+            <h1>Advancing plant breeding through AI and statistics.</h1>
+            <p class="hero-description">
+              Portfolio of projects focused on G×E analysis, genomics, enviromics,
+              and prediction in untested environments.
+            </p>
+          </div>
+          <div class="hero-art"></div>
+        </div>
+
+        <!-- Slider controls -->
+        <button class="hero-nav hero-nav-prev" aria-label="Previous slide">&#10094;</button>
+        <button class="hero-nav hero-nav-next" aria-label="Next slide">&#10095;</button>
       </section>
 
       <!-- Projects -->
@@ -71,13 +94,13 @@
               class="card-overlay"
               href="https://github.com/Kaio-Olimpio/GIS_FA_Common_Bean"
               target="_blank"
-              aria-label="Enhancing GIS–FA for prediction in untested environments"
+              aria-label="GIS–FA for prediction in untested environments"
             ></a>
             <div class="card-body">
               <h3>GIS–FA for prediction in untested environments</h3>
               <p class="card-text">
                 End-to-end R pipeline integrating factor–analytic mixed models, environmental data
-                (climate, soil, spectral) and thematic maps to recommend commun beans in regions
+                (climate, soil, spectral) and thematic maps to recommend common bean hybrids in regions
                 without experimental trials.
               </p>
               <ul class="card-meta">
@@ -92,7 +115,7 @@
               class="card-overlay"
               href="https://github.com/BlasquesG/gxe-fa-dashboard"
               target="_blank"
-              aria-label="Open project G×E dashboard with factor-analytic models on GitHub"
+              aria-label="G×E dashboard with factor-analytic models"
             ></a>
             <div class="card-body">
               <h3>G×E dashboard with factor-analytic models</h3>
@@ -113,7 +136,7 @@
               class="card-overlay"
               href="https://github.com/BlasquesG/genomic-enviromics"
               target="_blank"
-              aria-label="Open project Genomic prediction integrated with enviromics on GitHub"
+              aria-label="Genomic prediction integrated with enviromics"
             ></a>
             <div class="card-body">
               <h3>Genomic prediction integrated with enviromics</h3>
@@ -131,35 +154,38 @@
         </div>
       </section>
 
-<!-- Publications -->
-<section id="publications" class="section">
-  <div class="section-header">
-    <h2>Selected publications</h2>
-  </div>
+      <!-- Publications -->
+      <section id="publications" class="section">
+        <div class="section-header">
+          <h2>Selected publications</h2>
+        </div>
 
-  <ul class="pub-list">
+        <ul class="pub-list">
 
-    <li>
-      <strong>Blasques, G.M.</strong>, Dias, L.A.S., Araújo, M.S. et al. (2025).
-      Enhancing enviromics-based predictions in common bean multi-environment trials.
-      <em>Scientific Reports<em>.
-      <span class="pub-extra">
-        <a href="https://doi.org/10.1038/s41598-025-21882-x" target="_blank">https://doi.org/10.1038/s41598-025-21882-x</a>
-      </span>
-    </li>
+          <li>
+            <strong>Blasques, G.M.</strong>, Dias, L.A.S., Araújo, M.S. et al. (2025).
+            Enhancing enviromics-based predictions in common bean multi-environment trials.
+            <em>Scientific Reports</em>.
+            <span class="pub-extra">
+              <a href="https://doi.org/10.1038/s41598-025-21882-x" target="_blank">
+                https://doi.org/10.1038/s41598-025-21882-x
+              </a>
+            </span>
+          </li>
 
-    <li>
-      Pereira, G.R., Araújo, M.S., Chaves, S.F.S., <strong>Blasques, G.M.</strong> et al. (2025).
-      Exploring genotype-by-environment interactions in tropical soybean multi-environment trials.
-      <em>Euphytica<em>.
-      <span class="pub-extra">
-        <a href="https://doi.org/10.1007/s10681-025-03576-7" target="_blank">https://doi.org/10.1007/s10681-025-03576-7</a>
-      </span>
-    </li>
+          <li>
+            Pereira, G.R., Araújo, M.S., Chaves, S.F.S., <strong>Blasques, G.M.</strong> et al. (2025).
+            Exploring genotype-by-environment interactions in tropical soybean multi-environment trials.
+            <em>Euphytica</em>.
+            <span class="pub-extra">
+              <a href="https://doi.org/10.1007/s10681-025-03576-7" target="_blank">
+                https://doi.org/10.1007/s10681-025-03576-7
+              </a>
+            </span>
+          </li>
 
-  </ul>
-</section>
-
+        </ul>
+      </section>
 
       <!-- About -->
       <section id="about" class="section">
@@ -200,9 +226,33 @@
 
     </main>
   </div>
+
+  <!-- Hero slider script -->
+  <script>
+    (function () {
+      const slides = document.querySelectorAll('.hero-slide');
+      const prevBtn = document.querySelector('.hero-nav-prev');
+      const nextBtn = document.querySelector('.hero-nav-next');
+
+      if (!slides.length) return;
+
+      let current = 0;
+
+      function showSlide(index) {
+        slides[current].classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+      }
+
+      prevBtn.addEventListener('click', () => showSlide(current - 1));
+      nextBtn.addEventListener('click', () => showSlide(current + 1));
+
+      // troca automática 
+      setInterval(() => showSlide(current + 1), 8000);
+    })();
+  </script>
 </body>
 </html>
-
 
 
 
