@@ -46,12 +46,12 @@
     <!-- Main content -->
     <main class="main">
 
-      <!-- Hero slider -->
-      <section id="home" class="hero">
+      <!-- Hero slider estilo OpenAI -->
+      <section id="home" class="hero-slider">
 
         <!-- Slide 1 -->
-        <div class="hero-slide active">
-          <div class="hero-text">
+        <div class="hero-slide active slide-1">
+          <div class="hero-content">
             <p class="hero-subtitle">Welcome back, Gabriel</p>
             <h1>Gabriel’s portfolio in R and plant breeding.</h1>
             <p class="hero-description">
@@ -59,12 +59,11 @@
               with a focus on prediction in untested environments.
             </p>
           </div>
-          <div class="hero-art"></div>
         </div>
 
         <!-- Slide 2 -->
-        <div class="hero-slide">
-          <div class="hero-text">
+        <div class="hero-slide slide-2">
+          <div class="hero-content">
             <p class="hero-subtitle">Research & analytics</p>
             <h1>Advancing plant breeding through AI and statistics.</h1>
             <p class="hero-description">
@@ -72,12 +71,21 @@
               and prediction in untested environments.
             </p>
           </div>
-          <div class="hero-art"></div>
         </div>
 
-        <!-- Slider controls -->
-        <button class="hero-nav hero-nav-prev" aria-label="Previous slide">&#10094;</button>
-        <button class="hero-nav hero-nav-next" aria-label="Next slide">&#10095;</button>
+        <!-- Arrows -->
+        <button class="hero-arrow hero-arrow-prev" aria-label="Previous slide">
+          <span>&#10094;</span>
+        </button>
+        <button class="hero-arrow hero-arrow-next" aria-label="Next slide">
+          <span>&#10095;</span>
+        </button>
+
+        <!-- Dots -->
+        <div class="hero-dots">
+          <button class="hero-dot active" data-slide="0"></button>
+          <button class="hero-dot" data-slide="1"></button>
+        </div>
       </section>
 
       <!-- Projects -->
@@ -161,7 +169,6 @@
         </div>
 
         <ul class="pub-list">
-
           <li>
             <strong>Blasques, G.M.</strong>, Dias, L.A.S., Araújo, M.S. et al. (2025).
             Enhancing enviromics-based predictions in common bean multi-environment trials.
@@ -183,7 +190,6 @@
               </a>
             </span>
           </li>
-
         </ul>
       </section>
 
@@ -227,34 +233,51 @@
     </main>
   </div>
 
-  <!-- Hero slider script -->
+  <!-- Slider script -->
   <script>
     (function () {
       const slides = document.querySelectorAll('.hero-slide');
-      const prevBtn = document.querySelector('.hero-nav-prev');
-      const nextBtn = document.querySelector('.hero-nav-next');
+      const dots = document.querySelectorAll('.hero-dot');
+      const prev = document.querySelector('.hero-arrow-prev');
+      const next = document.querySelector('.hero-arrow-next');
 
       if (!slides.length) return;
 
       let current = 0;
+      let timer = null;
 
-      function showSlide(index) {
+      function setActive(index) {
         slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
         current = (index + slides.length) % slides.length;
         slides[current].classList.add('active');
+        dots[current].classList.add('active');
       }
 
-      prevBtn.addEventListener('click', () => showSlide(current - 1));
-      nextBtn.addEventListener('click', () => showSlide(current + 1));
+      function nextSlide(delta) {
+        setActive(current + delta);
+        resetTimer();
+      }
 
-      // troca automática 
-      setInterval(() => showSlide(current + 1), 8000);
+      function resetTimer() {
+        if (timer) clearInterval(timer);
+        timer = setInterval(() => setActive(current + 1), 8000);
+      }
+
+      prev.addEventListener('click', () => nextSlide(-1));
+      next.addEventListener('click', () => nextSlide(1));
+      dots.forEach((dot, i) =>
+        dot.addEventListener('click', () => {
+          setActive(i);
+          resetTimer();
+        })
+      );
+
+      resetTimer();
     })();
   </script>
 </body>
 </html>
-
-
 
 
 
