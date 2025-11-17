@@ -155,43 +155,50 @@ body {
 }
 
 .card {
+  position: relative;
   background: #ffffff;
   border-radius: 14px;
   padding: 18px 20px 22px;
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
   display: flex;
   flex-direction: column;
-  gap: 12px;
-
-  /* Make clickable but NOT look like a link */
-  text-decoration: none !important;
-  color: inherit !important;
-  cursor: pointer;
-
+  overflow: hidden;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+.card-body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  text-indent: -9999px; /* hidden text */
+}
+
+/* Hover effect */
 .card:hover {
   transform: translateY(-3px);
   box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
 }
 
-/* Titles inside cards */
 .card h3 {
   font-size: 17px;
   font-weight: 600;
   color: #111827;
-  margin: 0;
 }
 
-/* Body text */
 .card-text {
   font-size: 14px;
   line-height: 1.45;
   color: #4b5563;
 }
 
-/* Icons + metadata */
 .card-meta {
   list-style: none;
   font-size: 13px;
@@ -205,7 +212,6 @@ body {
 .card-meta li i {
   margin-right: 6px;
 }
-
 
 /* Publications */
 .pub-list {
@@ -222,7 +228,7 @@ body {
   color: #6b7280;
 }
 
-/* About – custom bullets (solution 2) */
+/* About – custom bullets */
 .about-list {
   list-style: none;
   margin: 0;
@@ -310,7 +316,3 @@ body {
     height: 180px;
   }
 }
-
-
-
-
