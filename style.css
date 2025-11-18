@@ -50,7 +50,7 @@ body {
   overflow: hidden;
 }
 
-/* A imagem em si */
+/* A imagem */
 .logo-icon.photo img {
   width: 100%;
   height: 100%;
@@ -95,12 +95,12 @@ body {
   color: #ffffff;
 }
 
-/* Ícones de contato na sidebar (desktop) – em linha, sem bolinha */
+/* Ícones de contato na sidebar */
 .sidebar-contacts {
   margin-top: auto;
   display: flex;
   flex-direction: row;
-  gap: 16px;                    /* espaço entre os ícones */
+  gap: 18px;                    
   padding: 0 0 20px 18px;
 }
 
@@ -113,7 +113,7 @@ body {
   border: none;
   background: transparent;
   color: #4b5563;
-  font-size: 24px;              /* ícone maior */
+  font-size: 24px;             
   cursor: pointer;
 }
 
@@ -122,14 +122,14 @@ body {
   transform: translateY(-1px);
 }
 
-/* Main – fluxo vertical padrão, sem flex/grid */
+/* Main – fluxo vertical */
 .main {
   padding: 24px 32px 40px;
   display: block;
   width: 100%;
 }
 
-/* Hero slider estilo OpenAI */
+/* Hero slider */
 .hero-slider {
   position: relative;
   border-radius: 18px;
@@ -138,7 +138,7 @@ body {
   min-height: 220px;
 }
 
-/* Slides ocupam todo o espaço */
+/* Slides todo o espaço */
 .hero-slide {
   position: absolute;
   inset: 0;
@@ -148,7 +148,7 @@ body {
   padding: 32px 40px;
 }
 
-/* Gradientes diferentes por slide */
+/* Gradientes slide */
 .slide-1 {
   background: linear-gradient(120deg, #e5f0ff 0%, #eef2ff 40%, #a5b4fc 100%);
 }
@@ -244,14 +244,14 @@ body {
   background: #111827;
 }
 
-/* Sections – cada seção é um bloco na vertical */
+/* Sections */
 .section {
   margin-bottom: 32px;
   display: block;
   width: 100%;
 }
 
-/* segurança extra: seções principais sempre ocupam uma linha inteira */
+/* seções principais sempre ocupam uma linha inteira */
 #projects,
 #publications,
 #about {
@@ -290,7 +290,7 @@ body {
   z-index: 2;
 }
 
-/* link invisível que cobre todo o card */
+/* link invisível todo o card */
 .card-overlay {
   position: absolute;
   inset: 0;
@@ -358,7 +358,7 @@ body {
   color: #1d4ed8;
 }
 
-/* Contact (se voltar a usar algum dia) */
+/* Contact */
 .contact-list {
   list-style: none;
   padding: 0;
@@ -411,7 +411,7 @@ body {
     gap: 6px;
   }
 
-  /* Ícones no topo em linha APENAS no MOBILE */
+  /* Ícones no topo em linha MOBILE */
   .sidebar-contacts {
     margin-top: 0;
     flex-direction: row;
@@ -432,22 +432,22 @@ body {
   }
 }
 
-/* ===== Correção final: Publications e About SEMPRE empilhados ===== */
 
 #publications,
 #about {
-  /* vire um bloco normal */
+
   display: block !important;
   width: 100% !important;
   max-width: 100% !important;
 
-  /* não flutua, não gruda em ninguém */
+
   float: none !important;
   clear: both !important;
 
-  /* se o pai for flex-row, cada um ocupa a linha inteira */
+
   flex: 0 0 100% !important;
 
-  /* se o pai for grid, ocupa todas as colunas */
+
   grid-column: 1 / -1 !important;
 }
+
