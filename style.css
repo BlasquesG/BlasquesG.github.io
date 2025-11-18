@@ -129,6 +129,7 @@ body {
 /* Main */
 .main {
   padding: 24px 32px 40px;
+ display: block;
 }
 
 /* Hero slider estilo OpenAI */
@@ -432,6 +433,7 @@ body {
     text-align: left;
   }
 }
+
 
 
 
