@@ -35,7 +35,7 @@ body {
   font-size: 14px;
 }
 
-/* Foto */
+/* Ícone / foto do logo (base) */
 .logo-icon {
   width: 48px;
   height: 48px;
@@ -45,10 +45,12 @@ body {
   justify-content: center;
 }
 
+/* Quando for foto */
 .logo-icon.photo {
   overflow: hidden;
 }
 
+/* A imagem em si */
 .logo-icon.photo img {
   width: 100%;
   height: 100%;
@@ -93,12 +95,12 @@ body {
   color: #ffffff;
 }
 
-/* Sidebar contacts */
+/* Ícones de contato na sidebar (desktop) – em linha, sem bolinha */
 .sidebar-contacts {
   margin-top: auto;
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  gap: 16px;                    /* espaço entre os ícones */
   padding: 0 0 20px 18px;
 }
 
@@ -107,11 +109,12 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
   text-decoration: none;
-  color: #4b5563;
-  background: transparent;
   border: none;
+  background: transparent;
+  color: #4b5563;
+  font-size: 24px;              /* ícone maior */
+  cursor: pointer;
 }
 
 .sidebar-contacts a:hover {
@@ -119,14 +122,14 @@ body {
   transform: translateY(-1px);
 }
 
-/* Main — fluxo VERTICAL obrigatório */
+/* Main – fluxo vertical padrão, sem flex/grid */
 .main {
   padding: 24px 32px 40px;
-  display: block !important;          /* impede qualquer layout flex */
+  display: block;
   width: 100%;
 }
 
-/* Hero slider */
+/* Hero slider estilo OpenAI */
 .hero-slider {
   position: relative;
   border-radius: 18px;
@@ -135,6 +138,7 @@ body {
   min-height: 220px;
 }
 
+/* Slides ocupam todo o espaço */
 .hero-slide {
   position: absolute;
   inset: 0;
@@ -144,6 +148,7 @@ body {
   padding: 32px 40px;
 }
 
+/* Gradientes diferentes por slide */
 .slide-1 {
   background: linear-gradient(120deg, #e5f0ff 0%, #eef2ff 40%, #a5b4fc 100%);
 }
@@ -152,19 +157,21 @@ body {
   background: linear-gradient(120deg, #dbeafe 0%, #a5b4fc 40%, #f9a8d4 100%);
 }
 
+/* Slide ativo */
 .hero-slide.active {
   display: flex;
 }
 
 .hero-content {
   max-width: 720px;
+  color: #0f172a;
 }
 
 .hero-subtitle {
   font-size: 14px;
   margin-bottom: 8px;
-  opacity: 0.8;
   color: #1f2933;
+  opacity: 0.8;
 }
 
 .hero-slider h1 {
@@ -186,12 +193,31 @@ body {
   width: 36px;
   height: 36px;
   border-radius: 999px;
+  border: none;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   background: rgba(15, 23, 42, 0.28);
   color: #ffffff;
+}
+
+.hero-arrow span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.hero-arrow:hover {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+.hero-arrow-prev {
+  left: 16px;
+}
+
+.hero-arrow-next {
+  right: 16px;
 }
 
 /* Dots */
@@ -208,6 +234,7 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 999px;
+  border: none;
   background: rgba(15, 23, 42, 0.25);
   cursor: pointer;
 }
@@ -217,25 +244,23 @@ body {
   background: #111827;
 }
 
-/* Sections — empilhamento vertical garantido */
+/* Sections – cada seção é um bloco na vertical */
 .section {
-  width: 100%;
-  display: block !important;
-  clear: both !important;
   margin-bottom: 32px;
+  display: block;
+  width: 100%;
 }
 
-/* força cada seção PRINCIPAL a ocupar a linha inteira */
+/* segurança extra: seções principais sempre ocupam uma linha inteira */
 #projects,
 #publications,
 #about {
-  width: 100% !important;
-  max-width: 100% !important;
-  flex: 0 0 100% !important;
-  display: block !important;
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }
 
-/* Cards */
+/* Project cards */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -246,11 +271,12 @@ body {
   position: relative;
   background: #ffffff;
   border-radius: 14px;
-  padding: 16px 18px;
+  padding: 16px 18px 18px;
   box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
   display: flex;
   flex-direction: column;
   gap: 10px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
   cursor: pointer;
 }
 
@@ -259,11 +285,39 @@ body {
   box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
 }
 
+.card-body {
+  position: relative;
+  z-index: 2;
+}
+
+/* link invisível que cobre todo o card */
 .card-overlay {
   position: absolute;
   inset: 0;
   z-index: 3;
   text-indent: -9999px;
+}
+
+.card h3 {
+  font-size: 16px;
+}
+
+.card-text {
+  font-size: 13px;
+  color: #4b5563;
+}
+
+.card-meta {
+  list-style: none;
+  font-size: 12px;
+  color: #6b7280;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-meta i {
+  margin-right: 4px;
 }
 
 /* Publications */
@@ -272,17 +326,27 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  font-size: 14px;
 }
 
-/* About */
+.pub-extra {
+  display: block;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* About bullets */
 .about-list {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .about-list li {
+  position: relative;
   padding-left: 22px;
   margin-bottom: 10px;
-  position: relative;
+  line-height: 1.55;
 }
 
 .about-list li::before {
@@ -292,6 +356,39 @@ body {
   top: 1px;
   font-size: 18px;
   color: #1d4ed8;
+}
+
+/* Contact (se voltar a usar algum dia) */
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contact-list i {
+  font-size: 18px;
+  color: #1f2937;
+}
+
+.contact-list a {
+  color: #1d4ed8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+  color: #1e40af;
 }
 
 /* Responsivo */
@@ -304,18 +401,21 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    border-right: none;
     border-bottom: 1px solid #e5e7eb;
   }
 
   .nav {
     flex-direction: row;
-    gap: 6px;
     flex-wrap: wrap;
+    gap: 6px;
   }
 
+  /* Ícones no topo em linha APENAS no MOBILE */
   .sidebar-contacts {
     margin-top: 0;
     flex-direction: row;
+    padding-bottom: 0;
     padding-left: 0;
   }
 
@@ -326,4 +426,9 @@ body {
   .hero-slide {
     padding: 24px 20px;
   }
+
+  .hero-content {
+    text-align: left;
+  }
 }
+
