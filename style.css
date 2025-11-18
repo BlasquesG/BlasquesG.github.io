@@ -432,3 +432,22 @@ body {
   }
 }
 
+/* ===== Correção final: Publications e About SEMPRE empilhados ===== */
+
+#publications,
+#about {
+  /* vire um bloco normal */
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+
+  /* não flutua, não gruda em ninguém */
+  float: none !important;
+  clear: both !important;
+
+  /* se o pai for flex-row, cada um ocupa a linha inteira */
+  flex: 0 0 100% !important;
+
+  /* se o pai for grid, ocupa todas as colunas */
+  grid-column: 1 / -1 !important;
+}
