@@ -100,7 +100,7 @@ body {
   margin-top: auto;
   display: flex;
   flex-direction: row;
-  gap: 28px;                    
+  gap: 34px;                    
   padding: 0 0 20px 18px;
 }
 
@@ -450,6 +450,7 @@ body {
 
   grid-column: 1 / -1 !important;
 }
+
 
 
 
