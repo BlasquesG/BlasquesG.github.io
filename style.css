@@ -108,7 +108,7 @@ body {
   margin-top: auto;
   display: flex;
   flex-direction: row;
-  gap: 34px;                    
+  gap: 37px;                    
   padding: 0 0 20px 18px;
 }
 
@@ -458,6 +458,7 @@ body {
 
   grid-column: 1 / -1 !important;
 }
+
 
 
 
