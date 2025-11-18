@@ -45,8 +45,8 @@ body {
 
 /* Ícone / foto do logo (base) */
 .logo-icon {
-  width: 48px;
-  height: 48px;
+  width: 58px;
+  height: 58px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -108,7 +108,7 @@ body {
   margin-top: auto;
   display: flex;
   flex-direction: row;
-  gap: 37px;                    
+  gap: 39px;                    
   padding: 0 0 20px 18px;
 }
 
@@ -121,7 +121,7 @@ body {
   border: none;
   background: transparent;
   color: #4b5563;
-  font-size: 34px;             
+  font-size: 30px;             
   cursor: pointer;
 }
 
@@ -458,6 +458,7 @@ body {
 
   grid-column: 1 / -1 !important;
 }
+
 
 
 
